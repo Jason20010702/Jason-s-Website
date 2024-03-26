@@ -1,0 +1,233 @@
+@font-face {
+  font-family: Cubic;
+  src: url(../Cubic_11_1.100_R.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cubic";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  background-color: gray;
+  header {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    // sticky header
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    nav {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+  main {
+    display: flex;
+    background-color: black;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-right: 15%;
+    margin-left: 15%;
+
+    article {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &.introduce {
+        display: flex;
+        flex-wrap: wrap;
+
+        div {
+          &.text {
+            h1 {
+              font-size: 2rem;
+              color: white;
+              padding-top: 2%;
+              padding-left: 1vw;
+            }
+            h3 {
+              color: white;
+              font-size: 1.5rem;
+              padding-top: 5%;
+              max-width: 40vw;
+              padding-left: 1vw;
+            }
+          }
+          &.image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            img {
+              height: 18rem;
+              width: 15rem;
+              border-radius: 50%;
+              margin-top: 10%;
+            }
+            ul {
+              li {
+                color: white;
+                font-size: 1.2rem;
+                list-style-type: none;
+                padding-top: 5%;
+              }
+            }
+          }
+        }
+      }
+    }
+    section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-items: center;
+      width: 60vw;
+      &.portfolio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+          color: white;
+          font-size: 2.5rem;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
+        div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+          &.project1 {
+            iframe {
+              border: 2px solid white;
+              border-radius: 5%;
+            }
+            div {
+              display: flex;
+              flex-direction: column;
+              width: 50vw;
+              padding-left: 1.5rem;
+
+              h1 {
+                color: white;
+                font-size: 2rem;
+              }
+              h3 {
+                color: white;
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+      &.hobby {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+          color: white;
+          font-size: 2.5rem;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
+        ul {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          list-style-type: none;
+          text-align: center;
+          li {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            color: white;
+            font-size: 1.2rem;
+            img {
+              width: 10rem;
+              background-color: rgba(255, 255, 255, 0.75);
+              border: 3px solid white;
+              padding: 0.3rem;
+              border-radius: 50%;
+              transition: all 0.3s ease;
+              &:hover {
+                border: 5px solid white;
+                padding: 0.5rem;
+                li {
+                  color: plum;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  footer {
+    h1 {
+      text-align: center;
+      font-size: 1.2rem;
+      background-color: white;
+    }
+  }
+}
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 50vh; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 5rem; /* Rounded corners */
+  font-size: 20px; /* Increase font size */
+  transition: all 0.5s ease;
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+@media screen and (max-width: 1644px) {
+  body {
+    main {
+      article {
+        flex-direction: column;
+      }
+      section {
+        flex-direction: row;
+        &.portfolio {
+          div {
+            flex-direction: column;
+          }
+        }
+        &.hobby {
+          ul {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
